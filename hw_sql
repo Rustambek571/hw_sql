@@ -1,0 +1,21 @@
+ex1
+
+select employee.id, name, city
+from employee, works
+where employee.id=works.id and company_name='First Bank Corporation'
+
+
+
+ex2
+
+select employee.id, name, city
+from employee, works
+where employee.id=works.id and company_name='First Bank Corporation' and salary>10000
+
+
+ex3
+
+select count(employee.id)
+from employee, works
+where employee.id=works.id and company_name<>'First Bank Corporation'
+group by id
