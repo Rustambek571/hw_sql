@@ -1,0 +1,34 @@
+Agency database
+
+ex1
+
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+select AgtLastName, AgtFirstName, AgtPhoneNumber
+from agents
+
+ex2
+
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+select *
+from engagements
+
+ex3
+
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+select startDate, starttime
+from engagements
+
+
+RECIPES DATABASE
+
+ex1
+
+SET search_path = my_schema, "$user", recipesexample;
+select *
+from ingredients
+
+ex2
+
+SET search_path = my_schema, "$user", recipesexample;
+select *
+from recipes
