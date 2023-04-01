@@ -5,6 +5,7 @@ ex1
 SET search_path = my_schema, "$user", entertainmentagencyexample;
 select AgtLastName, AgtFirstName, AgtPhoneNumber
 from agents
+order by AgtLastName
 
 ex2
 
@@ -15,8 +16,9 @@ from engagements
 ex3
 
 SET search_path = my_schema, "$user", entertainmentagencyexample;
-select startDate, starttime
+select startDate, starttime, EngagementNumber
 from engagements
+order by starttime ASC, EngagementNumber DESC
 
 
 RECIPES DATABASE
@@ -32,4 +34,4 @@ ex2
 SET search_path = my_schema, "$user", recipesexample;
 select RecipeID, RecipeTitle, RecipeClassID, Preparation
 from recipes
-order by RecipeTitle ASC
+order by RecipeTitle
