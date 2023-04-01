@@ -30,5 +30,6 @@ from ingredients
 ex2
 
 SET search_path = my_schema, "$user", recipesexample;
-select *
+select RecipeID, RecipeTitle, RecipeClassID, Preparation
 from recipes
+order by RecipeTitle ASC
