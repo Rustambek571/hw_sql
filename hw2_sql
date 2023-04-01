@@ -18,7 +18,7 @@ ex3
 SET search_path = my_schema, "$user", entertainmentagencyexample;
 select startDate, starttime, EngagementNumber
 from engagements
-order by starttime ASC, EngagementNumber DESC
+order by startDate DESC, EngagementNumber ASC
 
 
 RECIPES DATABASE
