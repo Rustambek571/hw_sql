@@ -1,0 +1,109 @@
+SET search_path = my_schema, "$user",salesordersexample;
+
+-- ex1
+-- select CustFirstName,CustLastName,OrderDate,OrderNumber
+-- from customers
+-- inner join orders on customers.customerid=orders.customerid
+-- order by orderdate
+
+
+-- 2-method
+
+-- select CustFirstName,CustLastName,OrderDate,OrderNumber
+-- from customers
+-- natural join orders
+-- order by orderdate
+
+-- 3-method
+
+-- select CustFirstName,CustLastName,OrderDate,OrderNumber
+-- from customers
+-- inner join orders  using(customerid)
+-- order by orderdate
+
+
+-- ex2
+
+-- select vendname, ProductName, WholesalePrice
+-- from vendors
+-- inner join Product_Vendors on Product_Vendors.VendorID=vendors.VendorID
+-- inner join Products on Products.ProductNumber=Product_Vendors.ProductNumber
+-- where  Product_Vendors.WholesalePrice<100
+
+
+-- 2-method
+
+-- select vendname, ProductName, WholesalePrice
+-- from vendors
+-- natural join Product_Vendors
+-- natural join Products
+-- where  Product_Vendors.WholesalePrice<100
+
+-- 3-method
+
+-- select vendname, ProductName, WholesalePrice
+-- from vendors
+-- inner join Product_Vendors using(vendorid)
+-- inner join Products using(ProductNumber)
+-- where  Product_Vendors.WholesalePrice<100
+
+
+-- ex3
+
+-- select distinct  CustLastName,EmpLastName
+-- from customers
+-- inner join  orders on customers.CustomerID=orders.CustomerID
+-- inner join Employees on orders.EmployeeiD=Employees.EmployeeiD
+-- where customers.CustLastName=Employees.EmpLastName
+
+-- 2-method
+
+-- select distinct CustLastName,EmpLastName
+-- from customers
+-- natural join orders
+-- natural join employees
+-- where customers.CustLastName=Employees.EmpLastName
+
+-- 3-method
+
+-- select distinct  CustLastName,EmpLastName
+-- from customers
+-- inner join  orders using(CustomerID)
+-- inner join Employees using(EmployeeiD)
+-- where customers.CustLastName=Employees.EmpLastName
+
+
+
+Entertainment Agency Database
+
+
+SET search_path = my_schema, "$user", entertainmentagencyexample;
+
+-- ex4
+select  AgtLastName,EntStageName, AgtZipCode,EntZipCode
+from agents
+inner join Engagements on agents.AgentID=Engagements.AgentID
+inner join entertainers on entertainers.EntertainerID=Engagements.EntertainerID
+where agents.AgtZipCode=entertainers.EntZipCode
+
+
+Recipes Database
+
+ex5
+
+SET search_path = my_schema, "$user", recipesexample;
+
+select distinct recipetitle,IngredientName
+from recipes
+inner join Recipe_Ingredients on Recipe_Ingredients.RecipeiD=recipes.RecipeiD
+inner join Ingredients on Ingredients.IngredientID=Recipe_Ingredients.IngredientID
+where  Ingredients.IngredientName='Garlic' or Ingredients.IngredientName='Beef'
+
+
+ex6
+
+select recipetitle,IngredientName,
+from recipes
+inner join Recipe_Ingredients on Recipe_Ingredients.RecipeiD=recipes.RecipeiD
+inner join Ingredients on Ingredients.IngredientID=Recipe_Ingredients.IngredientID
+where IngredientName='Milk'
