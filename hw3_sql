@@ -18,7 +18,7 @@ SET search_path = my_schema, "$user",salesordersexample;
 
 -- select CustFirstName,CustLastName,OrderDate,OrderNumber
 -- from customers
--- inner join orders  using(customerid)
+-- inner join orders using(customerid)
 -- order by orderdate
 
 
