@@ -1,0 +1,30 @@
+ex1
+
+select  distinct VendName
+from vendors
+natural join Product_Vendors
+natural join Products
+order by VendNameq
+
+
+ex2
+
+select RecipeClassDescription
+from Recipe_Classes
+where RecipeClassDescription='Main course'
+
+ex3
+
+select distinct BowlerLastName, teamname
+from Bowlers
+inner join Teams on Teams.TeamID=Bowlers.TeamID
+where BowlerLastName like 'H%'
+
+
+ex4
+
+
+
+select  notes
+from recipes
+where notes is null
