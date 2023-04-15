@@ -24,7 +24,6 @@ where BowlerLastName like 'H%'
 ex4
 
 
-
 select  notes
 from recipes
 where notes is null
